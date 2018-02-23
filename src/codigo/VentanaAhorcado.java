@@ -12,10 +12,14 @@ import javax.swing.JButton;
 
 /**
  *
- * @author Usuario
+ * @author Daniel Ortiz Vallejo
  */
 public class VentanaAhorcado extends javax.swing.JFrame {
-    
+    /* TODO
+    -Método parasaber si la partida ha terminado
+    -Array de palabras random para poner en el juego
+    -Metodo para poner los espacios correctos
+    */ 
     String palabraOculta = "CETYS";
     int numeroDeFallos = 0;
     /**
@@ -50,8 +54,10 @@ public class VentanaAhorcado extends javax.swing.JFrame {
     }
     
     private void chequeaBoton(JButton _boton){
-	_boton.setEnabled(false);
-	chequeaLetra(_boton.getText());
+	if(_boton.isEnabled()){
+	    _boton.setEnabled(false);
+	    chequeaLetra(_boton.getText());
+	}
     }
     
     private void dibujaImagen(int numeroImagen){
